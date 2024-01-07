@@ -3,3 +3,7 @@
 # locate the largest number among the 3
 
 #pseudocode
+# Create the Tkinter window
+# Get user input for three numbers
+# Find and print the biggest number
+# Print the biggest number
