@@ -6,8 +6,10 @@
 
 import tkinter as tk
 from tkinter import ttk
+import pyttsx3
 
 def find_largest_number():
+    try:
         num1 = float(entry_num1.get())
         num2 = float(entry_num2.get())
         num3 = float(entry_num3.get())
@@ -15,6 +17,12 @@ def find_largest_number():
         largest_number = max(num1, num2, num3)
 
         result_label.config(text=f"Largest Number: {largest_number}")
+
+        # Speak the result
+        engine.say(f"The largest number is {largest_number}")
+        engine.runAndWait()
+    except ValueError:
+        result_label.config(text="Please enter valid numbers")
 
 # Create the main window
 root = tk.Tk()
@@ -45,4 +53,8 @@ find_button.grid(row=3, column=0, columnspan=2, pady=10)
 result_label = ttk.Label(root, text="")
 result_label.grid(row=4, column=0, columnspan=2, pady=10)
 
+# Text-to-speech engine
+engine = pyttsx3.init()
 
+# Run the main loop
+root.mainloop()
