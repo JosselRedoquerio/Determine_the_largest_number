@@ -6,6 +6,7 @@
 
 import tkinter as tk
 from tkinter import ttk
+from tkinter import PhotoImage
 import pyttsx3
 
 def find_largest_number():
@@ -27,6 +28,11 @@ def find_largest_number():
 # Create the main window
 root = tk.Tk()
 root.title("Find Largest Number")
+
+# Set a background image
+background_image = PhotoImage(file=r"c:\Users\RLF\OneDrive - Real LIFE Foundation, Inc\Pictures\Screenshots\color 2.png")
+background_label = tk.Label(image=background_image)
+background_label.place(relwidth=1, relheight=1)
 
 # Create and place widgets
 label_num1 = ttk.Label(root, text="Enter Number 1:")
