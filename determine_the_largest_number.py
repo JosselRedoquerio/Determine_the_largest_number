@@ -15,7 +15,12 @@ def find_largest_number():
         num2 = float(entry_num2.get())
         num3 = float(entry_num3.get())
 
-        largest_number = max(num1, num2, num3)
+        if num1 >= num2 and num1 >= num3:
+            largest_number = num1
+        elif num2 >= num1 and num2 >= num3:
+            largest_number = num2
+        else:
+            largest_number = num3
 
         result_label.config(text=f"Largest Number: {largest_number}")
 
